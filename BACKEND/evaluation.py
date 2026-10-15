@@ -31,7 +31,6 @@ def evaluate_agent_run(
     action = result.get("approved_action", result.get("action", "no_action"))
     safety_allowed = result.get("safety_allowed", True)
 
-    # An action explicitly marked unsafe must not be approved.
     if safety_allowed is False and action != "no_action":
         checks["safety_blocked_unsafe_action"] = False
 
